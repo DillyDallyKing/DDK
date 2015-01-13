@@ -1,4 +1,3 @@
-<!doctype html>
 <html ng-app="myApp">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
@@ -11,7 +10,7 @@
 
     <!-- CHAT MARKUP -->
     <div class='example-chat l-demo-container'>
-      <header>My Koding Chat App</header>
+      <header>The International 5 Ticket Interest Page</header>
 
       <div class='example-chat-toolbar'>
         <label for='nameInput'>Username:</label>
@@ -32,35 +31,34 @@
 
     <script>
       var myApp = angular.module("myApp", ["firebase"]);
-
       myApp.controller('MyController', ['$scope', '$firebase',
         function($scope, $firebase) {
           //CREATE A FIREBASE REFERENCE
           var ref = new Firebase("https://iey148aw61u.firebaseio-demo.com/");
-
           // GET MESSAGES AS AN ARRAY
           $scope.messages = $firebase(ref).$asArray();
-
           //ADD MESSAGE METHOD
           $scope.addMessage = function(e) {
-
             //LISTEN FOR RETURN KEY
             if (e.keyCode === 13 && $scope.msg) {
               //ALLOW CUSTOM OR ANONYMOUS USER NAMES
               var name = $scope.name || 'anonymous';
-
               //ADD TO FIREBASE
               $scope.messages.$add({
                 from: name,
                 body: $scope.msg
               });
-
               //RESET MESSAGE
               $scope.msg = "";
             }
           }
         }
       ]);
+      
+      
     </script>
+    
+    <b>Please check out my friend, <a href="">Shaun Teh</a>'s by clicking his name!</b>
   </body>
 </html>
+
